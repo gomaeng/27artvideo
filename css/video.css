@@ -2,8 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    height: auto; /* 기존 100%에서 변경 */
+    overflow: visible; /* 기존 hidden에서 변경 */
     background-color: transparent; 
 }
 
