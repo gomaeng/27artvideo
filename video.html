@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Showcase</title>
+    <link rel="stylesheet" href="css/video.css">
+</head>
+<body>
+
+    <div class="video-container-wrapper">
+        <!-- 왼쪽 이동 버튼 -->
+        <button class="video-btn video-prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        
+        <!-- 슬라이드 메인 박스 -->
+        <div class="video-main-box">
+            
+            <!-- 카테고리 탭 버튼 영역 -->
+            <div class="category-tabs">
+                <button class="category-btn active" onclick="switchCategory('virtual')">Virtual</button>
+                <button class="category-btn" onclick="switchCategory('animation')">Animation</button>
+            </div>
+
+            <!-- 안내 문구 영역 (자바스크립트가 탭에 맞춰 문구를 바꿔줍니다) -->
+            <div id="categoryNotice" class="notice-text"></div>
+
+            <div class="video-viewport">
+                <div class="video-track">
+                    <!-- 슬라이드 목록은 자바스크립트에서 동적으로 생성됩니다 -->
+                </div>
+            </div>
+
+            <!-- 하단 인디케이터 -->
+            <div class="video-dots"></div>
+        </div>
+        
+        <!-- 오른쪽 이동 버튼 -->
+        <button class="video-btn video-next-btn" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script src="js/video.js"></script>
+</body>
+</html>

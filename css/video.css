@@ -1,0 +1,187 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent; 
+}
+
+/* 아트머그 최대 가로 폭 1180px 반영 (위쪽 불필요한 여백 제거) */
+.video-container-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 10px 50px; /* 위쪽 패딩을 0으로 붙여버림 */
+    box-sizing: border-box;
+}
+
+/* 슬라이드 메인 박스 */
+.video-main-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px 16px; /* 위아래 패딩 줄임 */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+}
+
+/* 카테고리 탭 버튼 영역 */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.category-btn {
+    background-color: #fff0f4;
+    color: #ff9dbf;
+    border: 1.5px solid #ffd6e8;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    background-color: #ffd6e8;
+    color: #ffffff;
+    border-color: #ff9dbf;
+}
+
+.category-btn.active {
+    background-color: #ff9dbf;
+    color: #ffffff;
+    border-color: #ff9dbf;
+    box-shadow: 0 3px 6px rgba(255, 157, 191, 0.3);
+}
+
+/* 안내 문구 스타일 (#bfb4d4) */
+.notice-text {
+    font-size: 13px;
+    color: #bfb4d4;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 영상 박스 전용 에코 그림자 (#ffd6e8 적용) */
+.video-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 6px 0px 0px #ffd6e8;
+}
+
+/* 슬라이드 트랙 */
+.video-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+}
+
+/* 슬라이드 */
+.video-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 유튜브 비율 16:9 고정 */
+.video-frame {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 하단 점점 표시 (인디케이터) */
+.video-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #fff0f4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ff9dbf;
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* 좌우 이동 버튼 (위쪽 뜬 공간 없애도록 세로 중앙 정렬 맞춤) */
+.video-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background-color: #ffffff;
+    color: #ff9dbf;
+    border: 1.5px solid #ffd6e8;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(255, 214, 232, 0.4);
+    transition: all 0.2s ease;
+    z-index: 10;
+    padding: 0;
+}
+
+.video-btn:hover {
+    background-color: #fff0f4;
+    border-color: #ff9dbf;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.video-prev-btn { left: 2px; }
+.video-next-btn { right: 2px; }
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .video-container-wrapper {
+        padding: 0 32px 10px 32px;
+    }
+    .video-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+}
