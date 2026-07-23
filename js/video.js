@@ -125,7 +125,7 @@ function switchCategory(category) {
     if (currentCategory === 'virtual') {
         categoryNotice.innerText = '쇼케이스 영상은 천천히 업로드하고 있습니다.';
     } else {
-        categoryNotice.innerText = '커버곡 작업은 의뢰자분의 커버곡 영상으로 업로드하고 있습니다.';
+        categoryNotice.innerText = '커버곡 작업은 커버곡 영상으로 업로드하고 있습니다.';
     }
 
     renderSlides();
